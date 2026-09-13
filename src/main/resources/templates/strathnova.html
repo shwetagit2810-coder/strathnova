@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<!-- Strathnova, both modes in one file. Mode A conversation, Mode B full portal.
+     Nothing external, nothing relative. Open it anywhere. -->
+<html lang="en" data-theme="dark"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Strathnova</title>
+<meta name="description" content="Senior engineering and strategy in parallel. Two ways in: talk it through, or see everything.">
+<meta name="theme-color" content="#0B1420">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600;1,700&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/strathnova.css">
+
+</head><body>
+<div id="modeA" class="live"><div class="shell">
+
+ <div class="top">
+  <button class="brand" type="button" onclick="go(0)">
+   <svg class="ap" viewBox="0 0 100 100" aria-hidden="true"><g class="blades" id="bl">
+    <polygon points="22.3,48.5 34.8,26.8 9.7,26.8" fill="currentColor"/>
+    <polygon points="9.2,73.2 34.8,73.3 9.2,28.8" fill="currentColor"/>
+    <polygon points="11.2,74.8 49.7,97.0 62.6,74.8" fill="currentColor"/>
+    <polygon points="77.7,51.5 52.0,96.0 90.5,73.7" fill="#E0B457"/>
+    <polygon points="90.8,26.8 65.2,26.8 90.8,71.2" fill="currentColor"/>
+    <polygon points="88.8,25.2 50.0,2.9 11.2,25.3" fill="currentColor"/>
+   </g></svg>
+   <span><b>STRATHNOVA</b><small>Convergence of expertise.</small></span>
+  </button>
+  <div class="topright"><button type="button" class="mswap" id="mswapA" onclick="setMode('B')"><span class="sw-i" aria-hidden="true">&#9776;</span><span class="sw-t"><em>Rather browse?</em>Full site</span></button>
+   <span class="crumb" id="cb"></span>
+   <button class="restart" id="rs" type="button" onclick="go(0)">Start again</button>
+   
+  </div>
+ </div>
+ <div class="rail"><i id="fill"></i></div>
+
+ <div class="stage"><div class="inner">
+
+  <!-- 0 -->
+  <div class="step on" id="s0">
+   <div class="herowrap"><div>
+   <span class="mono">No pitch &middot; Ninety seconds</span>
+   <h1 style="margin-top:18px">Let us sit down and start.</h1>
+   <p class="said">Let us look at the issue together, work out the solution, and be straight about whether we can help. All of it, part of it, or none of it.</p>
+   <p class="said">If we cannot, we say so and name who can. <em>That is a value, not a courtesy.</em></p>
+   <p class="said ask">So where do we start?</p>
+   
+   </div>
+   <div class="modepick"><div class="mphead"><span class="mdot"></span>Two ways to read this site</div><div class="mprow here"><span class="lab">Mode A</span><span class="txt"><b>Straight to the issue</b><span>Skip the browsing. Name the problem, get a read.</span></span></div><button type="button" class="mprow" onclick="setMode('B')"><span class="lab">Mode B</span><span class="txt"><b>The full site</b><span>Services, credentials, people, the record.</span></span></button></div>
+  </div>
+   <div class="doors" id="doors"></div>
+   
+  </div>
+
+  <!-- 1 -->
+  <div class="step" id="s1">
+   <span class="mono">Naming it</span>
+   <h2 style="margin-top:14px">Alright. Where does it hurt?</h2>
+   <p class="said">Five places this usually shows up. Do not overthink it. <em>Pick the one your gut went to first</em>, you can change it in a second.</p>
+   <div class="grid g5" id="cats"></div>
+  </div>
+
+  <!-- 2 -->
+  <div class="step" id="s2">
+   <span class="mono">Naming it</span>
+   <h2 id="s2h" style="margin-top:14px"></h2>
+   <p class="said">These are not marketing lines. <em>They are sentences people have actually said to me across a table.</em> One of them will sound like your own voice.</p>
+   <div class="grid g2" id="probs"></div>
+  </div>
+
+  <!-- 3 -->
+  <div class="step" id="s3">
+   <span class="mono">My read</span>
+   <h2 id="rh" style="margin-top:14px"></h2>
+   <p class="said" style="margin-bottom:20px">Here is what I would say if you had just told me that across the table. Free, and before you have given me anything.</p>
+   <div class="read"><div class="readbox" id="rb"></div><div class="costs" id="rc"></div></div>
+   <div class="begin">
+    <button class="btn" type="button" onclick="go(6)">That lands. Tell me more &rarr;</button>
+    <span class="micro">One senior partner · one business day</span>
+   </div>
+  </div>
+
+  <!-- 4 -->
+  <div class="step" id="s4">
+   <span class="mono">Straight to it</span>
+   <h2 style="margin-top:14px">Good. What shape does this need to be?</h2>
+   <p class="said">Four ways we work. <em>If none of them is quite it, pick the nearest</em> and correct me in the next step.</p>
+   <div class="grid g4" id="models"></div>
+  </div>
+
+  <!-- 5 -->
+  <div class="step" id="s5">
+   <span class="mono">Me first</span>
+   <h2 style="margin-top:14px">Fair enough. Let me go first.</h2>
+   <p class="said">There are two of us. That is not modesty, it is the model. <em>you get the same two people from the first call to the handover.</em> Nobody is passed down to a junior once the contract is signed, because there is nobody to pass you to.</p>
+   <div class="facts">
+    <div class="fact"><b>What we actually do</b><span><strong>Strategy and engineering, in parallel.</strong> The plan and the build argued out at the same table, instead of handed between two firms who blame each other.</span></div>
+    <div class="fact"><b>How it goes</b><span>Thirty minutes on a call. A scoped plan in <strong>48 hours</strong>. Then the work runs in parallel workstreams until we hand it over.</span></div>
+    <div class="fact"><b>What it costs you</b><span><strong>No equity. Ever.</strong> You keep the intellectual property from day one. Fixed scope, and nothing that locks you to us afterwards.</span></div>
+    <div class="fact"><b>Where we are honest</b><span>We are early and selective. <strong>We have no case studies to show you yet</strong>, and we are not going to invent any.</span></div>
+   </div>
+   <p class="diffline">&ldquo;If we are not the right fit, I will say so on the first call and point you to who might be. That is the difference, and it costs us work.&rdquo;</p>
+   <div class="begin">
+    <button class="btn ghost" type="button" onclick="go(7)">Show me how you think &rarr;</button>
+    <button class="btn" type="button" onclick="door('diag')">Alright. Let us name my problem &rarr;</button>
+   </div>
+  </div>
+
+  <!-- 6 -->
+  <div class="step" id="s6">
+   <span class="mono">Last thing</span>
+   <h2 style="margin-top:14px" id="caph"></h2>
+   <p class="said" id="caps"></p>
+   <form class="form" id="frm" onsubmit="return send(event)">
+    <div class="f"><label for="nm">What should I call you</label><input id="nm" required autocomplete="name"></div>
+    <div class="f"><label for="em">Where to reach you</label><input id="em" type="email" required autocomplete="email"></div>
+    <div class="f"><label for="cx">Anything you want me to know first (optional)</label><textarea id="cx" rows="2"></textarea></div>
+    <div class="f" id="urgwrap"><label>How soon does this need to move</label><div class="pillrow" id="urg"></div></div>
+    <button class="btn" type="submit" style="margin-top:10px">Send it &rarr;</button>
+    <p class="terms">No equity, ever. You keep the intellectual property from day one. And if we are not the right fit, I will tell you on the first call rather than three invoices in.</p>
+   </form>
+  </div>
+
+  <!-- 7 -->
+  <div class="step" id="s7">
+   <span class="mono">How I think</span>
+   <h2 style="margin-top:14px">Do not take my word for it. Read some and decide.</h2>
+   <p class="said">These are written to <em>argue with your assumptions</em>, not to flatter them. Pick one and I will send it. Nothing else follows it unless you ask.</p>
+   <div class="res" id="reslist"></div>
+  </div>
+
+  <!-- 8 -->
+  <div class="step" id="s8">
+   <span class="mono">Done</span>
+   <h2 style="margin-top:14px" id="dh"></h2>
+   <div class="donebox"><span class="mono">What happens now</span><p id="dn"></p></div>
+   <div class="begin"><button class="btn ghost" type="button" onclick="go(0)">Back to the start</button></div>
+  </div>
+
+ </div></div>
+
+ <div class="foot">
+  <span>&copy; 2026 Strathnova, RSquareAS2 Consulting LLP</span>
+  <span><a href="mailto:americas@rsquareas2.com">americas</a> · <a href="mailto:asia@rsquareas2.com">asia</a> · <a href="mailto:europe@rsquareas2.com">europe</a></span>
+ </div>
+</div></div>
+<div id="modeB"><a class="skip" href="#main">Skip to main content</a>
+<header><div class="wrap nav"><a class="brand" data-nav href="#home"><svg class="ap" width="32" height="32" viewBox="0 0 100 100" aria-hidden="true"><g class="blades"><polygon points="22.3,48.5 34.8,26.8 9.7,26.8" fill="currentColor"/><polygon points="9.2,73.2 34.8,73.3 9.2,28.8" fill="currentColor"/><polygon points="11.2,74.8 49.7,97.0 62.6,74.8" fill="currentColor"/><polygon points="77.7,51.5 52.0,96.0 90.5,73.7" fill="#E0B457"/><polygon points="90.8,26.8 65.2,26.8 90.8,71.2" fill="currentColor"/><polygon points="88.8,25.2 50.0,2.9 11.2,25.3" fill="currentColor"/></g></svg><span class="wm"><b>STRATHNOVA</b><small>Convergence of expertise.</small></span></a><nav aria-label="Primary"><ul class="menu"><li><a data-nav href="#home">Home</a></li><li class="gp"><a data-nav href="#services">Services</a></li><li><a data-nav href="#engagement">Engagement</a></li><li class="gp"><a data-nav href="#about">About</a></li><li><a data-nav href="#advisory">Advisory</a></li><li><a data-nav href="#bench">Bench</a></li><li class="gp"><a data-nav href="#identify">Your Problem</a></li><li><a data-nav href="#contact">Contact</a></li></ul></nav><div class="right"><button type="button" class="mswap" id="mswapB" onclick="setMode('A')"><span class="sw-i" aria-hidden="true">&#9679;</span><span class="sw-t"><em>In a hurry?</em>Straight to the issue</span></button><button type="button" class="toggle" id="themeToggle" aria-label="Toggle theme">☾</button><a class="btn btn-gold" data-nav href="#contact">Book a call</a><button type="button" class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="mobnav" aria-label="Open menu">☰</button></div></div></header>
+<div class="mobnav" id="mobnav" aria-hidden="true"><button type="button" class="mobclose" data-mclose aria-label="Close menu">&times;</button><nav aria-label="Mobile menu"><a data-nav data-mclose href="#home">Home</a><a class="mgp"></a><a data-nav data-mclose href="#services">Services</a><a data-nav data-mclose href="#engagement">Engagement</a><a class="mgp"></a><a data-nav data-mclose href="#about">About</a><a data-nav data-mclose href="#advisory">Advisory</a><a data-nav data-mclose href="#bench">Bench</a><a class="mgp"></a><a data-nav data-mclose href="#identify">Your Problem</a><a data-nav data-mclose href="#contact">Contact</a><a class="btn btn-gold" data-nav data-mclose href="#contact" style="margin-top:12px">Book a call</a><div class="mob-social"><a href="https://www.linkedin.com/company/strathnova" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4.98 3.5A2.5 2.5 0 1 0 5 8.5 2.5 2.5 0 0 0 4.98 3.5zM3 9h4v12H3zM9 9h3.8v1.7h.05c.53-1 1.83-2.05 3.76-2.05C20.4 8.65 21 11 21 14.1V21h-4v-6c0-1.43-.03-3.27-2-3.27-2 0-2.3 1.56-2.3 3.17V21H9z"/></svg></a><a href="https://x.com/strathnova" target="_blank" rel="noopener" aria-label="X"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M18.9 2H22l-7.1 8.1L23 22h-6.6l-5-6.6L5.6 22H2.5l7.6-8.7L2 2h6.8l4.5 6zM17.7 20h1.7L7.1 4H5.3z"/></svg></a><a href="https://instagram.com/strathnova" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2c2.7 0 3 0 4.1.06 1 .05 1.8.24 2.4.5.6.24 1.1.57 1.6 1.06.5.5.82 1 1.06 1.6.26.6.45 1.4.5 2.4.06 1.1.06 1.4.06 4.1s0 3-.06 4.1c-.05 1-.24 1.8-.5 2.4a4.5 4.5 0 0 1-1.06 1.6 4.5 4.5 0 0 1-1.6 1.06c-.6.26-1.4.45-2.4.5-1.1.06-1.4.06-4.1.06s-3 0-4.1-.06c-1-.05-1.8-.24-2.4-.5a4.5 4.5 0 0 1-1.6-1.06 4.5 4.5 0 0 1-1.06-1.6c-.26-.6-.45-1.4-.5-2.4C2.01 15 2 14.7 2 12s0-3 .06-4.1c.05-1 .24-1.8.5-2.4A4.5 4.5 0 0 1 3.62 3.9 4.5 4.5 0 0 1 5.22 2.84c.6-.26 1.4-.45 2.4-.5C9 2.01 9.3 2 12 2zm0 5a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm0 8.2A3.2 3.2 0 1 1 12 8.8a3.2 3.2 0 0 1 0 6.4zM17.8 5.6a1.2 1.2 0 1 0 0 2.4 1.2 1.2 0 0 0 0-2.4z"/></svg></a><a href="https://youtube.com/@strathnova" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M23 12s0-3.2-.4-4.7a2.5 2.5 0 0 0-1.7-1.7C19.4 5.2 12 5.2 12 5.2s-7.4 0-8.9.4A2.5 2.5 0 0 0 1.4 7.3C1 8.8 1 12 1 12s0 3.2.4 4.7a2.5 2.5 0 0 0 1.7 1.7c1.5.4 8.9.4 8.9.4s7.4 0 8.9-.4a2.5 2.5 0 0 0 1.7-1.7C23 15.2 23 12 23 12zM9.8 15.3V8.7l5.7 3.3z"/></svg></a><a href="https://medium.com/@strathnova" target="_blank" rel="noopener" aria-label="Medium"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M2.8 7.4c0-.2 0-.4-.2-.5L1.2 5.3V5h4.5l3.5 7.7L11.9 5H16v.3l-1.2 1.1c-.1.1-.2.2-.1.4v8.4c0 .2 0 .3.1.4l1.1 1.1v.3h-5.6v-.3l1.2-1.1c.1-.1.1-.2.1-.4V8.1l-3.3 8.5h-.4L4.1 8.1v5.7c0 .3 0 .5.2.7l1.5 1.9v.3H1.6v-.3l1.5-1.9c.2-.2.3-.4.2-.7z"/></svg></a><button type="button" data-fb data-mclose aria-label="Give feedback"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 3h16a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H8l-5 4V5a2 2 0 0 1 1-2zm3 6v2h10V9zm0 4v2h7v-2z"/></svg></button></div></nav></div>
+<nav class="rail" aria-label="Social and feedback"><a href="https://www.linkedin.com/company/strathnova" target="_blank" rel="noopener" aria-label="LinkedIn"><i><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4.98 3.5A2.5 2.5 0 1 0 5 8.5 2.5 2.5 0 0 0 4.98 3.5zM3 9h4v12H3zM9 9h3.8v1.7h.05c.53-1 1.83-2.05 3.76-2.05C20.4 8.65 21 11 21 14.1V21h-4v-6c0-1.43-.03-3.27-2-3.27-2 0-2.3 1.56-2.3 3.17V21H9z"/></svg></i><span>LinkedIn</span></a><a href="https://x.com/strathnova" target="_blank" rel="noopener" aria-label="X"><i><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M18.9 2H22l-7.1 8.1L23 22h-6.6l-5-6.6L5.6 22H2.5l7.6-8.7L2 2h6.8l4.5 6zM17.7 20h1.7L7.1 4H5.3z"/></svg></i><span>X</span></a><a href="https://instagram.com/strathnova" target="_blank" rel="noopener" aria-label="Instagram"><i><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2c2.7 0 3 0 4.1.06 1 .05 1.8.24 2.4.5.6.24 1.1.57 1.6 1.06.5.5.82 1 1.06 1.6.26.6.45 1.4.5 2.4.06 1.1.06 1.4.06 4.1s0 3-.06 4.1c-.05 1-.24 1.8-.5 2.4a4.5 4.5 0 0 1-1.06 1.6 4.5 4.5 0 0 1-1.6 1.06c-.6.26-1.4.45-2.4.5-1.1.06-1.4.06-4.1.06s-3 0-4.1-.06c-1-.05-1.8-.24-2.4-.5a4.5 4.5 0 0 1-1.6-1.06 4.5 4.5 0 0 1-1.06-1.6c-.26-.6-.45-1.4-.5-2.4C2.01 15 2 14.7 2 12s0-3 .06-4.1c.05-1 .24-1.8.5-2.4A4.5 4.5 0 0 1 3.62 3.9 4.5 4.5 0 0 1 5.22 2.84c.6-.26 1.4-.45 2.4-.5C9 2.01 9.3 2 12 2zm0 5a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm0 8.2A3.2 3.2 0 1 1 12 8.8a3.2 3.2 0 0 1 0 6.4zM17.8 5.6a1.2 1.2 0 1 0 0 2.4 1.2 1.2 0 0 0 0-2.4z"/></svg></i><span>Instagram</span></a><a href="https://youtube.com/@strathnova" target="_blank" rel="noopener" aria-label="YouTube"><i><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M23 12s0-3.2-.4-4.7a2.5 2.5 0 0 0-1.7-1.7C19.4 5.2 12 5.2 12 5.2s-7.4 0-8.9.4A2.5 2.5 0 0 0 1.4 7.3C1 8.8 1 12 1 12s0 3.2.4 4.7a2.5 2.5 0 0 0 1.7 1.7c1.5.4 8.9.4 8.9.4s7.4 0 8.9-.4a2.5 2.5 0 0 0 1.7-1.7C23 15.2 23 12 23 12zM9.8 15.3V8.7l5.7 3.3z"/></svg></i><span>YouTube</span></a><a href="https://medium.com/@strathnova" target="_blank" rel="noopener" aria-label="Medium"><i><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M2.8 7.4c0-.2 0-.4-.2-.5L1.2 5.3V5h4.5l3.5 7.7L11.9 5H16v.3l-1.2 1.1c-.1.1-.2.2-.1.4v8.4c0 .2 0 .3.1.4l1.1 1.1v.3h-5.6v-.3l1.2-1.1c.1-.1.1-.2.1-.4V8.1l-3.3 8.5h-.4L4.1 8.1v5.7c0 .3 0 .5.2.7l1.5 1.9v.3H1.6v-.3l1.5-1.9c.2-.2.3-.4.2-.7z"/></svg></i><span>Medium</span></a><button type="button" data-fb aria-label="Give your feedback"><i><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 3h16a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H8l-5 4V5a2 2 0 0 1 1-2zm3 6v2h10V9zm0 4v2h7v-2z"/></svg></i><span>Give your feedback</span></button></nav>
+<div id="liveRegion" class="sr-only" aria-live="polite" aria-atomic="true"></div>
+<main id="main" tabindex="-1"><section class="page" id="home">
+<section><div class="wrap hero-grid">
+ <div><p class="eyebrow w">For Leaders and Founders who move fast but mindfully</p>
+  <h1>Strategic depth.<br>Engineering velocity.</h1>
+  <p class="sub">Strathnova is the partnership that closes the gap between where you are and where your idea deserves to be. Convergence of expertise. One powerful direction.</p>
+  <div class="cta-row"><a class="btn btn-gold" data-nav href="#contact">Book a free 30-min call →</a><a class="btn btn-ghost" data-nav href="#engagement">See how we work</a></div>
+  <p class="micro">No commitment. No pitch deck. Just clarity on what is possible.</p></div>
+ <div class="herocol"><div class="modepick"><div class="mphead"><span class="mdot"></span>Two ways to read this site</div><button type="button" class="mprow" onclick="setMode('A')"><span class="lab">Mode A</span><span class="txt"><b>Straight to the issue</b><span>Skip the browsing. Name the problem, get a read.</span></span></button><div class="mprow here"><span class="lab">Mode B</span><span class="txt"><b>The full site</b><span>Services, credentials, people, the record.</span></span></div></div><div class="stats"><div class="stat" data-sn-stat="shipped"><b>47+</b><span>Leaders and Founders shipped products with us</span></div>
+  <div class="stat" data-sn-stat="speed"><b>6 wks</b><span>Average idea to live MVP</span></div>
+  <div class="stat" data-sn-stat="years"><b>40+</b><span>Years combined senior experience</span></div>
+  <div class="stat term" data-sn-stat="equity"><b>0%</b><span>Equity and lock-in. Always.</span></div>
+  <div class="stat term" data-sn-stat="ip"><b>100%</b><span>IP stays with you. Always.</span></div></div></div>
+</div></section>
+<section class="sec-tight" style="background:var(--bg2)"><div class="wrap">
+ <div class="intro"><div><p class="eyebrow">The problem</p><h2>Every Leader and Founder almost hits the same wall.</h2></div>
+  <div class="r"><span class="point">What is yours? Pick the one below that sounds like you and we can roll on.</span></div></div>
+ <div class="pstage-wrap"><div id="pstage"></div>
+  <div class="pctrl"><button class="pbtn" id="pprev" type="button">&lsaquo; Previous</button><button class="pbtn" id="ppause" type="button" aria-pressed="false">Pause</button><div class="dots" id="pdots"></div><button class="pbtn" id="pnext" type="button">Next &rsaquo;</button><a class="pbtn seeall" data-nav href="#identify">See all problems</a></div>
+ </div>
+</div></section>
+<section><div class="wrap"><div class="intro"><div><p class="eyebrow">Our approach</p><h2>Disciplined by design. Fast, but never rushed.</h2></div>
+ <div class="r">Strategy, technology and operating decisions run as one engagement. Short loops, senior hands, and you always know which station we are at.</div></div>
+ <div class="approach"><div class="aline"></div><div class="afill"></div><div class="amark"></div><div class="stepbar">
+  <div class="astep"><div class="dot">01</div><span class="k">Align</span><h3>30-minute call</h3><p>We tune in fast, no pitch.</p></div>
+  <div class="astep"><div class="dot">02</div><span class="k">Scope</span><h3>48-hour plan</h3><p>The work, the sequence, the outcome. No bloat.</p></div>
+  <div class="astep"><div class="dot">03</div><span class="k">Deliver</span><h3>Parallel workstreams</h3><p>Strategy, technology and operating model advance together, with visible progress every week.</p></div>
+  <div class="astep"><div class="dot">04</div><span class="k">Own it</span><h3>Full handover</h3><p>Frameworks, models, systems and documentation. All of it yours to run.</p></div>
+ </div></div>
+</div></section>
+<section class="sec-tight" style="background:var(--bg2)"><div class="wrap"><div class="intro"><div><p class="eyebrow">Engagement models</p><h2>Four shapes. One senior team.</h2></div>
+ <div class="r">Each colour is a different way to work together. The full detail lives on the Engagement Models page.</div></div>
+ <div class="modelrow"><a class="mrow m0" data-model="strategic-consulting" href="#engagement"><b>Strategic Consulting</b><span>Senior judgment on the decisions that matter.</span></a><a class="mrow m1" data-model="shadow-advisory" href="#engagement"><b>Shadow Advisory</b><span>The person in the room who will say it.</span></a><a class="mrow m2" data-model="build-operate-transfer" href="#engagement"><b>Build Operate Transfer</b><span>We bring the expertise.</span></a><a class="mrow m3" data-model="startup-in-a-box" href="#engagement"><b>Startup in a Box</b><span>Idea to shipped product.</span></a></div>
+ <a class="explore" data-nav href="#engagement" style="display:inline-block;margin-top:14px">See all four models in detail &rarr;</a>
+</div></section>
+<section><div class="wrap"><div class="intro"><div><p class="eyebrow">Who we work with</p><h2>Leaders and Founders at every stage.</h2></div>
+ <div class="r">Founders, chief operating officers, boards, operators, artificial-intelligence leaders and academics. Any leader where the decisions are real and the truth is in short supply.</div></div>
+ <div class="g3" style="margin-top:20px">
+  <div class="card"><h3>Founder-led and early stage</h3><p>First idea to first scale, when the wrong answer is expensive.</p></div>
+  <div class="card"><h3>Mid-market and scaling</h3><p>Established operations, lean leadership, and real room to improve.</p></div>
+  <div class="card"><h3>Boards, investors and domain leaders</h3><p>Where the decision has to stand up to someone else.</p></div></div>
+</div></section>
+<section class="sec-tight foldsec open" style="background:var(--bg2)"><div class="wrap"><p class="eyebrow">Proof</p><h2><button class="foldbtn" type="button" aria-expanded="true" aria-controls="fold-proof"><span>The record, as it builds.</span><span class="fmeta"><em>3 live &middot; 5 building</em><span class="fchev" aria-hidden="true">&#9662;</span></span></button></h2><div class="foldbody" id="fold-proof"><p class="foldtext">Named client case studies will appear here as engagements complete, and we will never invent them. What we can show you today is what we have built ourselves.</p><p class="vlabel"><span class="dot live"></span>Live ,  go and look</p><div class="vlive"><a class="vcard" href="https://raisingthemraisingus.org/" target="_blank" rel="noopener"><h4>Raising Them, Raising Us</h4><p>A preventative human development movement built on the 0 to 8 developmental window. Full site, essays, and a book in progress.</p><span class="vgo">Visit &rarr;</span></a><a class="vcard" href="https://rsquareas2.com/" target="_blank" rel="noopener"><h4>rsquareas²</h4><p>The holding company behind seven worlds. Interactive portal, generative audio and visuals, seven subscription paths.</p><span class="vgo">Visit &rarr;</span></a><a class="vcard" href="https://instagram.com/jashn_jkt" target="_blank" rel="noopener"><h4>Jashn</h4><p>Artisanal ice creams celebrating Indian flavours. Brand, identity and product photography.</p><span class="vgo">Visit &rarr;</span></a></div><p class="vlabel"><span class="dot build"></span>In build</p><ul class="vbuild"><li><b>Startup in a Box</b><span>Our own venture-build product, with its operating portal alongside it.</span></li><li><b>Yayawar</b><span>A venture moving through Startup in a Box. Structured intake, then build.</span></li><li><b>Lumiora</b><span>Portal in build. Detail to follow.</span></li></ul><p class="vlabel"><span class="dot write"></span>In writing</p><ul class="vbuild books"><li><b>The Language Nobody Taught Us</b><span>Raising Them, Raising Us &middot; the 0 to 8 formation window</span></li><li><b>Design For Everyone</b><span>Design that works for the full range of human variation</span></li></ul></div></div></section>
+
+<section class="sec-tight foldsec"><div class="wrap"><p class="eyebrow">Questions</p><h2><button class="foldbtn" type="button" aria-expanded="false" aria-controls="fold-faq"><span>The things Leaders and Founders ask us.</span><span class="fmeta"><em>5 questions</em><span class="fchev" aria-hidden="true">&#9662;</span></span></button></h2><div class="foldbody" id="fold-faq"><p class="foldtext">Straight answers. If yours is not here, ask us on a call.</p><div class="faqgrid">
+  <div class="acc"><button type="button" aria-expanded="false"><span style="font-weight:600">Do you take equity?</span><span class="chev">&#9662;</span></button><div class="body"><p>No. Never have, never will. You own the company and everything we build inside it, from day one.</p></div></div>
+  <div class="acc"><button type="button" aria-expanded="false"><span style="font-weight:600">How quickly can you start?</span><span class="chev">&#9662;</span></button><div class="body"><p>A free thirty-minute call, then a scoped plan within forty-eight hours. Build begins as soon as the scope is agreed.</p></div></div>
+  <div class="acc"><button type="button" aria-expanded="false"><span style="font-weight:600">Who actually does the work?</span><span class="chev">&#9662;</span></button><div class="body"><p>The senior partners you meet on the call. The same two people, start to finish.</p></div></div>
+  <div class="acc"><button type="button" aria-expanded="false"><span style="font-weight:600">What if we are not the right fit?</span><span class="chev">&#9662;</span></button><div class="body"><p>We will say so on the first call and point you to who might be. We only take work where we can add real value.</p></div></div>
+  <div class="acc"><button type="button" aria-expanded="false"><span style="font-weight:600">How does pricing work?</span><span class="chev">&#9662;</span></button><div class="body"><p>Fixed scope, no lock-in. Fixed-price for builds, milestone-based for build-operate-transfer, and a monthly retainer for advisory. Indicative figures are on the Services page.</p></div></div>
+ </div></div></div></section>
+</section><section class="page" id="services">
+<section><div class="wrap"><div class="intro"><div><p class="eyebrow">Our services</p><h2>What we actually do.</h2></div>
+ <div class="r">Two senior practices, run in parallel from the same table: engineering that ships, and strategy that holds up under pressure. This is the core of Strathnova.</div></div>
+ <div class="g2" style="margin-top:20px">
+  <div class="card"><span class="tag">Engineering, SRS</span><h3>Build that ships and survives</h3><p>Architecture, full-stack build, deployment, and handover, designed to survive the next three rounds of funding.</p><div class="pills"><span class="pill s0">Full-Stack</span><span class="pill s1">Architecture</span><span class="pill s2">CI/CD & Infra</span><span class="pill s0">Team Design</span><span class="pill s1">Technical Due Diligence</span><span class="pill s2">Automation</span></div></div>
+  <div class="card"><span class="tag">Strategy, AVA</span><h3>Thinking that holds up</h3><p>Annual operating plan, ideation, go-to-market, risk, and the off-record counsel that stress-tests every assumption before it costs you.</p><div class="pills"><span class="pill s0">AI Strategy</span><span class="pill s1">Framework Building</span><span class="pill s2">Pre-Mortem & Risk</span><span class="pill s0">Go-to-Market</span><span class="pill s1">Fundraising</span><span class="pill s2">Ghostwriting</span></div></div></div>
+</div></section>
+<section class="sec-tight" style="background:var(--bg2)"><div class="wrap"><div class="intro"><div><p class="eyebrow">Pricing models</p><h2>Clear, fair, and yours to own.</h2></div>
+ <div class="r">0% equity. Fixed scope. IP stays with you. Pick the commercial shape that matches the engagement.</div></div>
+ <div class="g4" style="margin-top:18px">
+  <div class="price"><span class="tag">Fixed-price</span><h3>Startup in a Box</h3><div class="amt" data-sn-price="startup-in-a-box">From $45,000 / project</div><p>Milestone-based. Idea to shipped MVP in ~6 weeks.</p></div>
+  <div class="price"><span class="tag">Milestone + operate</span><h3>Build Operate Transfer</h3><div class="amt" data-sn-price="build-operate-transfer">$18,000 / month + transfer</div><p>We build, run, and hand over.</p></div>
+  <div class="price"><span class="tag">Retainer</span><h3>Strategic Consulting</h3><div class="amt" data-sn-price="strategic-consulting">$9,500 / month</div><p>Senior advisory on demand.</p></div>
+  <div class="price"><span class="tag">Bespoke</span><h3>Shadow Advisory</h3><div class="amt" data-sn-price="shadow-advisory">From $4,500 / month</div><p>Off-record counsel, a few seats by design.</p></div></div>
+ <p class="note" style="margin-top:14px">Indicative figures. Every engagement is scoped before anything is agreed.</p>
+</div></section>
+<section><div class="wrap center"><p class="eyebrow">Not sure which fits</p><h2>Tell us where you are.</h2>
+ <div class="cta-row" style="justify-content:center;margin-top:16px"><a class="btn btn-gold" data-nav href="#identify">Identify your problem</a><a class="btn btn-ghost" data-nav href="#engagement">Compare engagement models</a></div></div></section>
+</section><section class="page" id="engagement">
+<section><div class="wrap"><div class="intro"><div><p class="eyebrow">Four engagement models</p><h2>Four ways in. Start wherever you are.</h2></div>
+ <div class="r">The models are the shape of the relationship. The <a class="explore" data-nav href="#services" style="margin:0">Services and pricing page</a> holds the detail of the work. Every model runs engineering and strategy in parallel.</div></div>
+ <div class="g2" style="margin-top:20px"><div class="card model m0" id="em-strategic-consulting"><span class="tag">Strategic Consulting</span><h3 style="font-family:Playfair Display,serif;font-size:1.15rem">Senior judgment, end to end.</h3><p>Senior advisory across every dimension of your venture: annual operating plan, ideation, market strategy, team, and fundraising.</p><div class="pills"><span class="pill s0">Operating plan</span><span class="pill s1">Ideation</span><span class="pill s2">Go-to-market</span><span class="pill s0">Team design</span><span class="pill s1">Fundraising</span></div><a class="explore" data-nav href="#contact">Talk to us →</a></div><div class="card model m1" id="em-shadow-advisory"><span class="tag">Shadow Advisory</span><h3 style="font-family:Playfair Display,serif;font-size:1.15rem">The person in the room who will say it.</h3><p>Off-record. Unlimited truth. No agenda. The thinking partner you call when the room needs someone who will say what no one else will.</p><div class="pills"><span class="pill s0">Off-record counsel</span><span class="pill s1">Strategy stress-testing</span><span class="pill s2">Sounding board</span><span class="pill s0">Executive ghostwriting</span></div><a class="explore" data-nav href="#contact">Talk to us →</a></div><div class="card model m2" id="em-build-operate-transfer"><span class="tag">Build Operate Transfer</span><h3 style="font-family:Playfair Display,serif;font-size:1.15rem">We bring the expertise.</h3><p>We embed senior engineering and strategy, build it with you, operate it, and transfer it completely.</p><div class="pills"><span class="pill s0">Co-created build</span><span class="pill s1">Operated with you</span><span class="pill s2">Full transfer</span><span class="pill s0">Team design</span></div><a class="explore" data-nav href="#contact">Talk to us →</a></div><div class="card model m3" id="em-startup-in-a-box"><span class="tag">Startup in a Box</span><h3 style="font-family:Playfair Display,serif;font-size:1.15rem">Idea to shipped product.</h3><p>Full-stack. Production-grade. Built to scale. You own every line of it.</p><div class="pills"><span class="pill s0">Rapid deployment</span><span class="pill s1">Full-stack build</span><span class="pill s2">CI/CD & infra</span><span class="pill s0">Yours to own</span></div><a class="explore" data-nav href="#contact">Talk to us →</a></div></div>
+</div></section>
+</section><section class="page" id="about">
+<section><div class="wrap"><div class="intro"><div><p class="eyebrow">Who is behind this</p><h2>Two minds. One mission.</h2></div>
+ <div class="r">A senior engineering and strategy practice for Leaders, Founders and operators who cannot afford the wrong answer. We do not delegate to juniors. We do not outsource the thinking. The people you meet on the call are the people who do the work.</div></div>
+ <p class="eyebrow" style="margin:22px 0 9px">Founding partners</p>
+ <div class="g2">
+  <div class="card pcard2"><span class="role">Shadow Strategist, Framework Architect</span><div class="name">AVA</div>
+   <div class="quote">“I am the person you call when you need someone to say what everyone in the room already knows but will not.”</div>
+   <button type="button" class="moreBtn">Read more</button><div class="more"><p>Two decades on the most complex, high-stakes assignments the global consulting world produces. Frameworks that became institutional tools, counsel through decisions that defined careers.</p><div class="pills"><span class="pill s0">AI Strategy</span><span class="pill s1">Framework Building</span><span class="pill s2">Pre-Mortem</span><span class="pill s0">Go-to-Market</span><span class="pill s1">Ghostwriting</span></div></div></div>
+  <div class="card pcard2"><span class="role">Engineering Partner, Senior Architect</span><div class="name">SRS</div>
+   <div class="quote">“Your great idea should never be slowed by a technical barrier. That is exactly what we remove.”</div>
+   <button type="button" class="moreBtn">Read more</button><div class="more"><p>Rapid deployment, expert architecture, intelligent automation. Documented, tested, and architected so the next stage does not mean a rewrite.</p><div class="pills"><span class="pill s0">Full-Stack</span><span class="pill s1">Architecture</span><span class="pill s2">CI/CD</span><span class="pill s0">Team Design</span><span class="pill s1">Technical Due Diligence</span></div></div></div></div>
+</div></section>
+<section class="sec-tight" style="background:var(--bg2)"><div class="wrap"><div class="intro"><div><p class="eyebrow">What we stand for</p><h2>Five values. Non-negotiable.</h2></div>
+ <div class="r">Heads-up commitments, not slogans. They decide what we take on, how we push back, and what we hand you at the end.</div></div>
+ <div class="g5" style="margin-top:18px">
+  <div class="val"><div class="n">01</div><h3>Leaders and Founders Vision, Dream First</h3><p>Your dream is the brief. We serve it, sharpen it, and protect it, never redirect it to what is easier for us.</p></div>
+  <div class="val"><div class="n">02</div><h3>Depth and Root Cause, not Patchwork</h3><p>We fix the cause, not the symptom. No puncture-management, we go to the root even when the quick patch is tempting.</p></div>
+  <div class="val"><div class="n">03</div><h3>Honest over Comfortable</h3><p>We will tell you when something is a bad idea, worth more than someone billing hours to agree with you.</p></div>
+  <div class="val"><div class="n">04</div><h3>Build to Hand Over</h3><p>Everything we make leaves your capability stronger. No dependency, full transfer, always.</p></div>
+  <div class="val"><div class="n">05</div><h3>Velocity with Intention</h3><p>Speed without direction is expensive debt. We move fast and right, because you cannot afford to undo both.</p></div></div>
+</div></section>
+<section><div class="wrap center"><p class="eyebrow">Guided by experience</p><h2>Backed by a senior advisory board.</h2>
+ <div class="cta-row" style="justify-content:center;margin-top:14px"><a class="btn btn-gold" data-nav href="#advisory">Meet the Advisory Board</a></div></div></section>
+</section><section class="page" id="advisory">
+<section><div class="wrap"><div class="intro"><div><p class="eyebrow">The credibility wall</p><h2>Our Advisory Board.</h2></div>
+ <div class="r">Senior leaders across business, sales, success, HR, governance, academia, industry and scale, who stand behind the practice. Available by introduction.</div></div>
+ <div class="adv" style="margin-top:20px">
+  <div class="advc"><div class="ph">A</div><div class="name">Anjan Das Gupta</div><div class="role">Board Advisor</div><div class="bio">Business, sales and growth leadership. Full profile to be added.</div></div>
+  <div class="advc"><div class="ph">S</div><div class="name">Dr. Shridhar Vyawahare</div><div class="role">Board Advisor</div><div class="bio">Three decades in HR strategy, labour policy and industrial governance. Founder of Vaibhav Placements (32+ yrs); NIPM leadership; HR/CSR Chair at MACCIA; Wage Fixation Committee, Ministry of Labour.<br><em>B.Sc., M.S.W., LL.B., PhD</em></div></div>
+  <div class="advc"><div class="ph">S</div><div class="name">Dr. Sambhavi Chandrashekar</div><div class="role">Board Advisor</div><div class="bio">Governance for human variation. Accessibility and learning design in education, across academia and industry. Full profile to be added.</div></div>
+  <div class="advc tba"><div class="ph">?</div><div class="name">Advisor to be announced</div><div class="role">Joining soon</div><div class="bio">A further senior advisor will be announced here.</div></div>
+  <div class="advc tba"><div class="ph">?</div><div class="name">Advisor to be announced</div><div class="role">Joining soon</div><div class="bio">Reserved slot, add name and bio when ready.</div></div>
+  <div class="advc tba"><div class="ph">?</div><div class="name">Advisor to be announced</div><div class="role">Joining soon</div><div class="bio">Reserved slot, add name and bio when ready.</div></div>
+ </div></div></section>
+<section class="sec-tight" style="background:var(--bg2)"><div class="wrap center"><p class="eyebrow">Work with us</p><h2>Senior attention on every engagement.</h2>
+ <div class="cta-row" style="justify-content:center;margin-top:14px"><a class="btn btn-gold" data-nav href="#contact">Book a free call</a><a class="btn btn-ghost" data-nav href="#about">About the practice</a></div></div></section>
+</section><section class="page" id="bench">
+<section><div class="wrap"><div class="intro"><div><p class="eyebrow">The people</p><h2>The best experts, holistic, cross-industry, cross-function.</h2></div>
+ <div class="r">Strathnova does not staff projects with generalists. Every expert on this bench is senior, domain-specific and pre-vetted, chosen for depth across industries and functions. <span class="gold">Senior only. No learning on your budget.</span></div></div>
+ <p class="eyebrow" style="margin:20px 0 9px">Founding partners</p>
+ <div class="g2"><div class="card"><span class="tag">Strategy, AVA</span><div class="pills"><span class="pill s0">AI Strategy</span><span class="pill s1">Framework Building</span><span class="pill s2">Pre-Mortem</span><span class="pill s0">Go-to-Market</span></div></div>
+  <div class="card"><span class="tag">Engineering, SRS</span><div class="pills"><span class="pill s0">Full-Stack</span><span class="pill s1">Architecture</span><span class="pill s2">CI/CD</span><span class="pill s0">Technical Due Diligence</span></div></div></div>
+ <p class="eyebrow" style="margin:20px 0 9px">Senior specialists, on demand</p>
+ <div class="g2"><div class="card"><span class="tag">Rohan Iyer</span><h3>AI and ML</h3><div class="pills"><span class="pill s0">Machine Learning</span><span class="pill s1">Python</span><span class="pill s2">NLP</span><span class="pill s0">PyTorch</span></div></div>
+  <div class="card"><span class="tag">Keshav Makwana</span><h3>Backend Architecture</h3><div class="pills"><span class="pill s0">Spring Boot</span><span class="pill s1">Java</span><span class="pill s2">PostgreSQL</span><span class="pill s0">AWS</span></div></div></div>
+</div></section>
+<section class="sec-tight" style="background:var(--bg2)"><div class="wrap center"><p class="eyebrow">Work with the bench</p><h2>The right expert. At the right moment.</h2>
+ <div class="cta-row" style="justify-content:center;margin-top:14px"><a class="btn btn-gold" data-nav href="#contact">Book a free call</a><a class="btn btn-ghost" data-nav href="#engagement">See how we engage</a></div></div></section>
+</section><section class="page" id="identify">
+<section><div class="wrap">
+ <a class="backlink" data-nav href="#home">&lsaquo; See all the problems</a>
+ <div class="intro"><div><p class="eyebrow">Conversation starter</p><h2>Let us both identify the problem, together.</h2></div>
+ <div class="r"><strong style="color:var(--text)">Start here if something is wrong and you cannot yet name it.</strong> Pick whatever sounds like you, as many as fit. Add a line of context and we will come back with a straight read on whether, and how, we can help.</div></div>
+ <div id="pickedBox" class="picked"></div>
+ <div class="hero-grid" style="margin-top:14px;align-items:start">
+  <form data-demo id="identifyForm"><div class="metro"><div id="probSteps"></div><div class="mstep"><span class="node"></span><span class="mlabel">Your details</span><div class="field"><label for="identify-f1">Your role</label><input id="identify-f1" placeholder="Leader / Founder / CEO / COO / Board"></div><div class="field"><label for="identify-f2">Your name</label><input id="identify-f2" required></div><div class="field"><label for="identify-f3">Email</label><input id="identify-f3" type="email" required></div><div class="field"><label for="identify-f4">A line of context (optional)</label><textarea id="identify-f4" rows="3"></textarea></div></div>
+   </div><button class="btn btn-gold" type="submit">Send, start the conversation</button>
+   <p class="done" style="display:none;color:var(--gold);margin-top:10px">Thank you, we will reply within one business day with an honest read.</p></form>
+  <div class="card"><span class="tag">Why this works</span><h3>No forms for forms' sake.</h3>
+   <p>Most sites make you describe your problem from scratch. We have done the rooms, so we have pre-named the walls Leaders and Founders actually hit. You point, and your choice is carried straight into this page so you never lose it.</p>
+   <p><strong style="color:var(--text)">Pre-emptive is our forte.</strong> Bring us the bet before it is placed and we will stress-test it, not just clean up after.</p>
+   <p class="eyebrow" style="margin:14px 0 8px">The five walls</p><div class="pills"><span class="pill s0">Pre-emptive</span><span class="pill s1">Product</span><span class="pill s2">Strategy</span><span class="pill s0">Judgment</span><span class="pill s1">Scale</span></div></div>
+ </div></div></section>
+</section><section class="page" id="contact">
+<section><div class="wrap"><div class="intro"><div><p class="eyebrow">Contact</p><h2>Let us figure this out together.</h2></div>
+ <div class="r"><strong style="color:var(--text)">Start here if you already know what you need and want a call.</strong> Tell us where you are, no typing required for most of it. We respond within one business day, always from a senior partner. Follow the lit path, the dot blinks where you are and moves on when you choose.</div></div>
+ <div class="hero-grid" style="margin-top:18px;align-items:start">
+  <form data-demo id="contactForm"><div class="metro">
+    <div class="mstep"><span class="node"></span><span class="mlabel">Where are you right now?</span><div class="chips"><button type="button" class="chip"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 21h6v-1H9zM12 2a7 7 0 0 0-4 12.7V17h8v-2.3A7 7 0 0 0 12 2z"/></svg>Still an idea</button><button type="button" class="chip"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 3h18v14H3zM2 19h20v2H2z"/></svg>Building an MVP</button><button type="button" class="chip"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 12h4l2 6 4-14 2 8h6v2h-7l-2-8-3 11-3-7H3z"/></svg>Live product</button><button type="button" class="chip"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 17l6-6 4 4 7-8v9H3z"/></svg>Scaling up</button></div></div>
+    <div class="mstep" data-multi="true"><span class="node"></span><span class="mlabel">What are you looking for? <em style="opacity:.6;font-weight:400;font-style:normal">(pick as many as apply)</em></span><div class="chips"><button type="button" class="chip">Strategic Consulting</button><button type="button" class="chip">Shadow Advisory</button><button type="button" class="chip">Build Operate Transfer</button><button type="button" class="chip">Startup in a Box</button><button type="button" class="chip">Not sure yet</button></div></div>
+    <div class="mstep"><span class="node"></span><span class="mlabel">When do you need to move?</span><div class="chips"><button type="button" class="chip">Right now</button><button type="button" class="chip">Within a month</button><button type="button" class="chip">1 to 3 months</button><button type="button" class="chip">Just exploring</button></div></div>
+    <div class="mstep"><span class="node"></span><span class="mlabel">How would you like to connect?</span><div class="chips"><button type="button" class="chip"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 5h12v14H3zM16 9l5-3v12l-5-3z"/></svg>Video call</button><button type="button" class="chip"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 2c-1 4 1 10 5 14s10 6 14 5l-3-4-4 1c-2-1-6-5-7-7l1-4z"/></svg>Phone call</button><button type="button" class="chip"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2a10 10 0 0 0-8.5 15.2L2 22l4.9-1.4A10 10 0 1 0 12 2zm5 14c-.3.8-1.6 1.5-2.3 1.5-1.6.1-3.6-.9-5.3-2.6S6.4 11 6.5 9.4c.1-.8.8-2 1.5-2.3.3-.1.7 0 .9.4l.8 1.7c.1.3 0 .6-.2.8l-.4.5c.6 1.2 1.6 2.2 2.8 2.8l.5-.4c.2-.2.5-.3.8-.2l1.7.8c.4.2.5.6.4.9z"/></svg>WhatsApp</button><button type="button" class="chip"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 5h18v14H3zM3 6l9 6 9-6"/></svg>Email me back</button></div></div>
+    <div class="mstep"><span class="node"></span><span class="mlabel">Your timezone</span><div class="field"><select><option>Select your timezone</option><option>GMT-8 Pacific</option><option>GMT-5 Eastern</option><option>GMT+0 London</option><option>GMT+1 Paris/Berlin</option><option>GMT+5:30 India (IST)</option><option>GMT+8 Singapore/Hong Kong</option><option>GMT+9 Tokyo/Seoul</option><option>GMT+10 Sydney</option></select></div></div>
+    <div class="mstep"><span class="node"></span><span class="mlabel">Your details</span><div class="field"><label for="contact-f1">Your name</label><input id="contact-f1" required></div><div class="field"><label for="contact-f2">Email</label><input id="contact-f2" type="email" required></div><div class="field"><label for="contact-f3">Anything else on your mind (optional)</label><textarea id="contact-f3" rows="3"></textarea></div></div>
+   </div><button class="btn btn-gold" type="submit">Book a free call</button>
+   <p class="done" style="display:none;color:var(--gold);margin-top:10px">Thank you, a senior partner will reply within one business day.</p></form>
+  <div>
+   <div class="card reach"><svg class="ap" width="32" height="32" viewBox="0 0 100 100" aria-hidden="true"><g class="blades"><polygon points="22.3,48.5 34.8,26.8 9.7,26.8" fill="currentColor"/><polygon points="9.2,73.2 34.8,73.3 9.2,28.8" fill="currentColor"/><polygon points="11.2,74.8 49.7,97.0 62.6,74.8" fill="currentColor"/><polygon points="77.7,51.5 52.0,96.0 90.5,73.7" fill="#E0B457"/><polygon points="90.8,26.8 65.2,26.8 90.8,71.2" fill="currentColor"/><polygon points="88.8,25.2 50.0,2.9 11.2,25.3" fill="currentColor"/></g></svg><span class="tag">Reach us</span><h3>Talk to a senior partner, directly.</h3><p>Every message is read by a partner, not a queue. We reply within one business day, matched to your time zone.</p>
+    <div class="reachbox"><div class="rrow"><span class="rg">North America</span><a href="mailto:americas@rsquareas2.com">americas@rsquareas2.com</a></div><div class="rrow"><span class="rg">Asia</span><a href="mailto:asia@rsquareas2.com">asia@rsquareas2.com</a></div><div class="rrow"><span class="rg">Europe</span><a href="mailto:europe@rsquareas2.com">europe@rsquareas2.com</a></div></div></div>
+   <div class="card" style="margin-top:14px"><span class="tag">What to expect</span>
+    <div class="expect"><b>1</b><div><strong>We listen first.</strong> No agenda, no demo.</div></div>
+    <div class="expect"><b>2</b><div><strong>We think with you.</strong> A working 30 minutes.</div></div>
+    <div class="expect"><b>3</b><div><strong>We are honest.</strong> If we are not the fit, we say so.</div></div></div>
+   <div class="card" style="margin-top:12px"><span class="tag">Why it is different</span><p style="font-family:Playfair Display,serif;font-style:italic;color:var(--text);margin:4px 0">"If we take you on, you have our full senior attention. Not an account manager. Not a team. Us."</p></div>
+  </div>
+ </div></div></section>
+</section>
+<section class="page" id="terms">
+<section><div class="wrap"><a class="backlink" data-nav href="#home">&lsaquo; Back to the site</a><div class="intro"><div><p class="eyebrow">Legal</p><h2>Terms of engagement.</h2></div><div class="r">What using this site means, and what governs the work if we go on to do any together.</div></div><div class="lawnote"><b>Draft for legal review</b>These were prepared to a standard appropriate for an early-stage consulting LLP operating from India into North America and Europe. They are not legal advice and have not been reviewed by a lawyer. Items marked <span class="fill">like this</span> need a decision before publication.</div><div class="lawsec"><h3>1. Who you are dealing with</h3><p>This site is operated by RSquareAS2 Consulting LLP, a limited liability partnership registered in India at Plot No. X-14, Kalamb Road, MIDC, Latur, Maharashtra 413512, India, trading as Strathnova.</p><p><span class="fill">The Strathnova name is subject to ongoing legal review. Confirm the position before publication.</span></p></div><div class="lawsec"><h3>2. What this site is, and is not</h3><p>Everything here is information about our practice. Nothing on this site is an offer, a quotation, or professional advice you can rely on. Prices shown are indicative and every engagement is scoped and quoted separately.</p><p>Reading this site, filling in a form, or receiving a written read from us does not create a client relationship.</p></div><div class="lawsec"><h3>3. How an engagement actually starts</h3><p>Work begins only under a separate written agreement signed by both parties. That agreement sets the scope, the fee, the timeline and the deliverables, and it takes precedence over anything stated here.</p></div><div class="lawsec"><h3>4. Equity and intellectual property</h3><p>We take no equity in your business, at any stage, under any engagement.</p><p>Intellectual property created for you in an engagement is yours from the moment it is created. We retain our own pre-existing frameworks, methods and tools, and grant you a licence to use anything of ours embedded in what we deliver.</p></div><div class="lawsec"><h3>5. Confidentiality</h3><p>Anything you tell us in an enquiry, a call, or an engagement is treated as confidential and is not shared outside the partnership without your permission. Shadow Advisory conversations are off the record by design.</p><p>We will not name you as a client, publish a case study, or use your logo without your written consent.</p></div><div class="lawsec"><h3>6. What we do not warrant</h3><p>We bring senior judgment and experience. We do not guarantee a commercial outcome, a funding result, or that a recommendation will succeed in your market.</p><p>To the extent permitted by law, our aggregate liability under any engagement is limited to the fees paid to us under that engagement. We are not liable for indirect or consequential loss, including lost profits or lost opportunity.</p></div><div class="lawsec"><h3>7. Your responsibilities</h3><p>You are responsible for the accuracy of the information you give us, for the decisions you take, and for obtaining your own legal, tax and regulatory advice where the work touches those areas.</p></div><div class="lawsec"><h3>8. Third-party links</h3><p>This site links to work we have built and to platforms where we publish. We are not responsible for the content or practices of any site we link to.</p></div><div class="lawsec"><h3>9. Governing law</h3><p>These terms are governed by the laws of India, and the courts at <span class="fill">insert city</span> have exclusive jurisdiction.</p><p><span class="fill">If you take clients in the EU, UK, US or Canada, your lawyer should confirm whether a different governing law or a dispute-resolution clause is needed for those engagements.</span></p></div><div class="lawsec"><h3>10. Changes</h3><p>We may update these terms. The version in force is the one published here on the date of your engagement.</p></div><div class="lawmeta">Last updated 26 August 2026 &middot; RSquareAS2 Consulting LLP &middot; Plot No. X-14, Kalamb Road, MIDC, Latur, Maharashtra 413512, India</div></div></section>
+</section>
+<section class="page" id="privacy">
+<section><div class="wrap"><a class="backlink" data-nav href="#home">&lsaquo; Back to the site</a><div class="intro"><div><p class="eyebrow">Legal</p><h2>Privacy notice.</h2></div><div class="r">What we collect, why, how long we keep it, and how you make us stop.</div></div><div class="lawnote"><b>Draft for legal review</b>These were prepared to a standard appropriate for an early-stage consulting LLP operating from India into North America and Europe. They are not legal advice and have not been reviewed by a lawyer. Items marked <span class="fill">like this</span> need a decision before publication.</div><div class="lawsec"><h3>1. Who is responsible for your data</h3><p>RSquareAS2 Consulting LLP is the data fiduciary under India's Digital Personal Data Protection Act 2023, and the data controller under the UK and EU General Data Protection Regulation where that applies.</p><p>Registered address: Plot No. X-14, Kalamb Road, MIDC, Latur, Maharashtra 413512, India.</p></div><div class="lawsec"><h3>2. What we collect</h3><p><b>When you contact us:</b> your name, email address, your role, the problem you selected, your stated timing, and anything you write in the free-text field.</p><p><b>When you use the site:</b> we do not use advertising or analytics cookies. The site stores your theme choice and your chosen mode in your own browser only. That never reaches us.</p><p><span class="fill">If local-currency pricing is switched on, the site will infer your country from your IP address. IP address is personal data under both DPDP and GDPR, so this notice must say so before that feature goes live.</span></p></div><div class="lawsec"><h3>3. Why we use it</h3><p>To reply to your enquiry, to work out whether we can help, and to carry out an engagement if one follows. We do not sell your data, and we do not send marketing you did not ask for.</p><p>If you request an article or a framework, we send that one item. Nothing follows it unless you ask.</p></div><div class="lawsec"><h3>4. Our lawful basis</h3><p>Under DPDP, we rely on your consent, given when you submit a form. Under GDPR, we rely on your consent for enquiries and on legitimate interests for replying to a business approach you initiated.</p></div><div class="lawsec"><h3>5. Who else sees it</h3><p><span class="fill">If a third-party form service or email provider is used, name it here and link its privacy policy. A named processor is required under both regimes.</span></p><p>We do not share your information with anyone else unless the law requires it.</p></div><div class="lawsec"><h3>6. How long we keep it</h3><p>Enquiries that do not become engagements: <span class="fill">24 months</span>, then deleted.</p><p>Engagement records: for the duration of the engagement and <span class="fill">7 years</span> afterwards, to meet Indian statutory and tax record-keeping requirements. Confirm the exact period with your accountant.</p></div><div class="lawsec"><h3>7. Where your data goes</h3><p>We operate from India and correspond with clients in North America, Asia and Europe, so your information may be accessed from outside your country.</p><p><span class="fill">For EU or UK personal data, an appropriate transfer mechanism such as Standard Contractual Clauses is required. Your lawyer should confirm which applies.</span></p></div><div class="lawsec"><h3>8. Your rights</h3><p><b>Under DPDP 2023</b> you may ask for access to your data, correction, completion, updating, or erasure, and you may nominate someone to exercise these rights on your behalf. You may withdraw consent at any time, as easily as you gave it.</p><p><b>Under GDPR</b> you additionally have rights of portability, restriction, objection, and the right to complain to your supervisory authority.</p></div><div class="lawsec"><h3>9. Grievance officer</h3><p>DPDP requires a named contact who answers data complaints.</p><p><span class="fill">Name, role and a monitored email address. This is mandatory, not optional. It cannot be a shared inbox nobody owns.</span></p><p>If you are not satisfied with the response, you may complain to the Data Protection Board of India, or to your own supervisory authority if you are in the EU or UK.</p></div><div class="lawsec"><h3>10. Children</h3><p>This site is aimed at business leaders. We do not knowingly collect data from anyone under 18. DPDP places additional obligations on processing children's data, and we do not process it.</p></div><div class="lawsec"><h3>11. Changes</h3><p>If this notice changes materially we will say so here, with the date.</p></div><div class="lawmeta">Last updated 26 August 2026 &middot; RSquareAS2 Consulting LLP &middot; Plot No. X-14, Kalamb Road, MIDC, Latur, Maharashtra 413512, India</div></div></section>
+</section>
+<section class="page" id="refund">
+<section><div class="wrap"><a class="backlink" data-nav href="#home">&lsaquo; Back to the site</a><div class="intro"><div><p class="eyebrow">Legal</p><h2>Cancellation and refund.</h2></div><div class="r">Professional services, not products. Here is what happens if either of us stops.</div></div><div class="lawnote"><b>Draft for legal review</b>These were prepared to a standard appropriate for an early-stage consulting LLP operating from India into North America and Europe. They are not legal advice and have not been reviewed by a lawyer. Items marked <span class="fill">like this</span> need a decision before publication.</div><div class="lawsec"><h3>1. What this covers</h3><p>Strathnova sells senior professional services. There is no physical product, no download, and no subscription that renews automatically. This policy sets out what happens when an engagement is cancelled by you or by us.</p></div><div class="lawsec"><h3>2. Before any work begins</h3><p>The first thirty-minute call is free and carries no obligation on either side. A scoped plan issued after that call is also free, and you are under no obligation to proceed.</p><p>If you cancel after signing but before work starts, any advance is refunded in full, less any third-party costs already committed on your instruction.</p></div><div class="lawsec"><h3>3. Fixed-price engagements</h3><p>Startup in a Box and similar fixed-scope work is billed against milestones. If you cancel mid-engagement, you pay for milestones completed and accepted, plus work in progress on the current milestone. Anything paid beyond that is refunded.</p><p><span class="fill">Confirm the notice period: 14 days is typical.</span></p></div><div class="lawsec"><h3>4. Retainers</h3><p>Strategic Consulting and Shadow Advisory are monthly. Either side may end the arrangement with <span class="fill">30 days</span> written notice. The current month is payable in full; nothing beyond it is charged.</p><p>Unused hours in a month do not roll forward and are not refundable, because the retainer buys availability rather than a quantity of hours.</p></div><div class="lawsec"><h3>5. Build Operate Transfer</h3><p>The build phase follows the fixed-price rules above. The operate phase follows the retainer rules. Transfer, once triggered, is completed and invoiced in full, because a partial handover leaves you with something you cannot run.</p></div><div class="lawsec"><h3>6. If we cancel</h3><p>If we end an engagement for any reason other than your material breach, we refund all fees for work not yet delivered, and we hand over everything produced to that point in a usable state. We will also tell you who else could take it on.</p><p>This follows from a value rather than a policy: if we are not the right fit, we say so.</p></div><div class="lawsec"><h3>7. How to cancel</h3><p>Write to your partner contact, or to <span class="fill">a named billing address</span>. We acknowledge within one business day and confirm the position in writing within five.</p></div><div class="lawsec"><h3>8. Refund timing</h3><p>Approved refunds are issued to the original payment method within <span class="fill">14 working days</span>.</p><p><span class="fill">If you take card or gateway payments, your provider is likely to require a published refund policy and may set its own timelines. Check their terms before publishing this.</span></p></div><div class="lawmeta">Last updated 26 August 2026 &middot; RSquareAS2 Consulting LLP &middot; Plot No. X-14, Kalamb Road, MIDC, Latur, Maharashtra 413512, India</div></div></section>
+</section>
+</main>
+<footer><div class="banner"><div class="wrap"><span class="am">Growth Mindset</span><span class="msg">We are always learning. If something feels off, tell us bluntly and we will thank you.</span><button class="bfb" data-fb type="button">Give feedback</button></div></div><div class="wrap"><div class="fgrid"><div class="fcol"><a class="brand" data-nav href="#home"><svg class="ap" width="24" height="24" viewBox="0 0 100 100" aria-hidden="true"><g class="blades"><polygon points="22.3,48.5 34.8,26.8 9.7,26.8" fill="currentColor"/><polygon points="9.2,73.2 34.8,73.3 9.2,28.8" fill="currentColor"/><polygon points="11.2,74.8 49.7,97.0 62.6,74.8" fill="currentColor"/><polygon points="77.7,51.5 52.0,96.0 90.5,73.7" fill="#E0B457"/><polygon points="90.8,26.8 65.2,26.8 90.8,71.2" fill="currentColor"/><polygon points="88.8,25.2 50.0,2.9 11.2,25.3" fill="currentColor"/></g></svg><span class="wm"><b>STRATHNOVA</b><small>Convergence of expertise.</small></span></a><p style="margin-top:9px">Convergence of expertise. One powerful direction.</p></div><div class="fcol"><h4>Explore</h4><a data-nav href="#services">Services & Pricing</a><a data-nav href="#engagement">Engagement</a><a data-nav href="#identify">Identify your problem</a></div><div class="fcol"><h4>Company</h4><a data-nav href="#about">About us</a><a data-nav href="#advisory">Advisory</a><a data-nav href="#bench">Bench</a><a data-nav href="#contact">Contact</a></div><div class="fcol"><h4>Connect</h4><a href="https://www.linkedin.com/company/strathnova">LinkedIn</a><a href="https://medium.com/@strathnova">Medium</a><a href="mailto:americas@rsquareas2.com">americas@rsquareas2.com</a><a href="mailto:asia@rsquareas2.com">asia@rsquareas2.com</a><a href="mailto:europe@rsquareas2.com">europe@rsquareas2.com</a></div></div><div class="legal"><span>&copy; 2026 Strathnova, RSquareAS2 Consulting LLP</span><a data-nav href="#terms">Terms</a><a data-nav href="#privacy">Privacy</a><a data-nav href="#refund">Cancellation &amp; Refund</a></div></div></footer>
+<div class="modal" id="fbModal" role="dialog" aria-modal="true" aria-label="Feedback"><div class="box"><button type="button" class="x" data-x aria-label="Close">&times;</button><h3>Give your feedback</h3><p>Quick note on the site or your experience.</p><form data-demo id="feedbackForm"><div class="field"><label for="index-f1">Your feedback</label><textarea id="index-f1" rows="4" required></textarea></div><div class="field"><label for="index-f2">Email (optional)</label><input id="index-f2" type="email"></div><button class="btn btn-gold" type="submit">Send feedback</button><p class="done" style="display:none;color:var(--gold);margin-top:10px">Thank you, we read every note.</p></form></div></div></div>
+<script src="/js/strathnova.js"></script>
+
+
+<!-- ═══════════════════════════════════════════════════════════════════════════
+     STRATHNOVA · INTERACTION LAYER
+     Purely additive. Nothing above this comment was modified.
+     Delete this single block to return the page to its original behaviour.
+     ═══════════════════════════════════════════════════════════════════════ -->
+<script src="/js/strathnova-fx.js"></script>
+
+
+</body></html>

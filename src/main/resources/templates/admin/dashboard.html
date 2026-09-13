@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Strathnova Admin</title>
+    <link rel="stylesheet" th:href="@{/css/admin.css}">
+</head>
+<body class="admin-body">
+<header class="admin-header">
+    <span class="brand">Strathnova Admin</span>
+    <form method="post" th:action="@{/admin/logout}">
+        <button type="submit" class="btn btn-link">Sign out</button>
+    </form>
+</header>
+
+<nav class="tabs">
+    <a th:href="@{/admin/dashboard(tab='leads')}"
+       th:classappend="${activeTab == 'leads'} ? 'active'">Lead Generation</a>
+    <a th:href="@{/admin/dashboard(tab='bench')}"
+       th:classappend="${activeTab == 'bench'} ? 'active'">Bench</a>
+</nav>
+
+<main class="admin-main">
+
+    <section th:if="${activeTab == 'leads'}">
+        <nav class="filter-bar">
+            <a th:href="@{/admin/dashboard(tab='leads')}"
+               th:classappend="${statusFilter == null} ? 'active'">All</a>
+            <a th:href="@{/admin/dashboard(tab='leads', status='NEW')}"
+               th:classappend="${statusFilter != null and statusFilter.name() == 'NEW'} ? 'active'">New</a>
+            <a th:href="@{/admin/dashboard(tab='leads', status='IN_PROGRESS')}"
+               th:classappend="${statusFilter != null and statusFilter.name() == 'IN_PROGRESS'} ? 'active'">In Progress</a>
+            <a th:href="@{/admin/dashboard(tab='leads', status='COMPLETED')}"
+               th:classappend="${statusFilter != null and statusFilter.name() == 'COMPLETED'} ? 'active'">Completed</a>
+            <a th:href="@{/admin/dashboard(tab='leads', status='CANCELLED')}"
+               th:classappend="${statusFilter != null and statusFilter.name() == 'CANCELLED'} ? 'active'">Cancelled</a>
+        </nav>
+
+        <p th:if="${#lists.isEmpty(leads)}" class="muted">No leads match this filter.</p>
+
+        <table th:if="${not #lists.isEmpty(leads)}" class="leads-table">
+            <thead>
+            <tr>
+                <th>Received</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Message</th>
+                <th>Details</th>
+                <th>Source</th>
+                <th>Status</th>
+                <th>Actions</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="submission : ${leads}">
+                <td th:text="${#temporals.format(submission.createdAt, 'yyyy-MM-dd HH:mm')}"></td>
+                <td th:text="${submission.details.get('name')}"></td>
+                <td th:text="${submission.details.get('email')}"></td>
+                <td th:text="${submission.details.get('message')}"></td>
+                <td>
+                    <span th:if="${#lists.isEmpty(submission.extraDetails)}" class="muted">&mdash;</span>
+                    <div th:unless="${#lists.isEmpty(submission.extraDetails)}" class="detail-list">
+                        <div class="detail-field" th:each="field : ${submission.extraDetails}">
+                            <th:block th:if="${field.lines.size() == 1}">
+                                <b th:text="${field.label} + ':'"></b> <span th:text="${field.lines[0]}"></span>
+                            </th:block>
+                            <th:block th:if="${field.lines.size() > 1}">
+                                <b th:text="${field.label} + ':'"></b>
+                                <ul class="detail-sublist">
+                                    <li th:each="line : ${field.lines}" th:text="${line}"></li>
+                                </ul>
+                            </th:block>
+                        </div>
+                    </div>
+                </td>
+                <td th:text="${submission.mode} + ' / ' + ${submission.formType}"></td>
+                <td>
+                    <span class="badge" th:classappend="'badge-' + ${#strings.toLowerCase(submission.status)}"
+                          th:text="${submission.status}"></span>
+                </td>
+                <td>
+                    <div th:if="${submission.status.name() == 'NEW'}" class="actions">
+                        <form method="post" th:action="@{/admin/leads/{id}/status(id=${submission.id})}">
+                            <input type="hidden" name="status" value="IN_PROGRESS"/>
+                            <input type="hidden" name="statusFilter" th:value="${statusFilter}"/>
+                            <button type="submit" class="btn btn-progress">Mark In Progress</button>
+                        </form>
+                        <form method="post" th:action="@{/admin/leads/{id}/status(id=${submission.id})}">
+                            <input type="hidden" name="status" value="COMPLETED"/>
+                            <input type="hidden" name="statusFilter" th:value="${statusFilter}"/>
+                            <button type="submit" class="btn btn-complete">Mark Completed</button>
+                        </form>
+                        <form method="post" th:action="@{/admin/leads/{id}/status(id=${submission.id})}">
+                            <input type="hidden" name="status" value="CANCELLED"/>
+                            <input type="hidden" name="statusFilter" th:value="${statusFilter}"/>
+                            <button type="submit" class="btn btn-cancel">Mark Cancelled</button>
+                        </form>
+                    </div>
+                    <div th:if="${submission.status.name() == 'IN_PROGRESS'}" class="actions">
+                        <form method="post" th:action="@{/admin/leads/{id}/status(id=${submission.id})}">
+                            <input type="hidden" name="status" value="COMPLETED"/>
+                            <input type="hidden" name="statusFilter" th:value="${statusFilter}"/>
+                            <button type="submit" class="btn btn-complete">Mark Completed</button>
+                        </form>
+                        <form method="post" th:action="@{/admin/leads/{id}/status(id=${submission.id})}">
+                            <input type="hidden" name="status" value="CANCELLED"/>
+                            <input type="hidden" name="statusFilter" th:value="${statusFilter}"/>
+                            <button type="submit" class="btn btn-cancel">Mark Cancelled</button>
+                        </form>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <section th:if="${activeTab == 'bench'}">
+        <p class="muted">No bench data yet.</p>
+    </section>
+
+</main>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Strathnova Admin - Sign in</title>
+    <link rel="stylesheet" th:href="@{/css/admin.css}">
+</head>
+<body class="admin-body admin-login-body">
+    <main class="login-card">
+        <h1>Strathnova Admin</h1>
+        <p class="muted">Sign in to manage leads.</p>
+        <div id="clerk-sign-in"></div>
+        <p id="login-error" class="error" hidden>Sign-in failed. Please try again.</p>
+    </main>
+
+    <!--
+      Clerk's embedded Sign In widget. clerk-js is loaded from this Clerk instance's
+      own Frontend API domain (clerk.issuer-uri in application.properties) so the
+      SDK build always matches the instance the publishable key below belongs to.
+    -->
+    <script async crossorigin="anonymous"
+            th:src="${clerkScriptUrl}"
+            th:attr="data-clerk-publishable-key=${clerkPublishableKey}"></script>
+    <script th:inline="javascript">
+        /*<![CDATA[*/
+        async function initClerkSignIn() {
+            if (!window.Clerk) {
+                setTimeout(initClerkSignIn, 50);
+                return;
+            }
+            try {
+                // Pin every Clerk redirect (sign-in, sign-up, and the dev-instance
+                // cross-domain session sync) back to this page - otherwise Clerk's
+                // default is the app root ("/"), which navigates away before the
+                // token handoff below can run.
+                await window.Clerk.load({
+                    signInFallbackRedirectUrl: '/admin/login',
+                    signUpFallbackRedirectUrl: '/admin/login'
+                });
+                window.Clerk.mountSignIn(document.getElementById('clerk-sign-in'), {
+                    fallbackRedirectUrl: '/admin/login'
+                });
+                window.Clerk.addListener(async ({ session }) => {
+                    if (!session) {
+                        return;
+                    }
+                    const token = await session.getToken();
+                    const response = await fetch('/admin/session', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ token: token })
+                    });
+                    if (response.ok) {
+                        window.location.href = '/admin/dashboard';
+                    } else {
+                        document.getElementById('login-error').hidden = false;
+                    }
+                });
+            } catch (err) {
+                document.getElementById('login-error').hidden = false;
+            }
+        }
+        initClerkSignIn();
+        /*]]>*/
+    </script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Strathnova</title>
+    <style>
+        body { font-family: sans-serif; max-width: 600px; margin: 40px auto; }
+        li { margin-bottom: 6px; }
+        form { margin-top: 20px; }
+    </style>
+</head>
+<body>
+    <h1>Strathnova</h1>
+    <p>Spring Boot + Thymeleaf + Spring Data JPA + PostgreSQL</p>
+
+    <h2>Notes</h2>
+    <ul>
+        <li th:each="note : ${notes}" th:text="${note.content}"></li>
+    </ul>
+
+    <form th:action="@{/notes}" method="post">
+        <input type="text" name="content" placeholder="New note" required />
+        <button type="submit">Add</button>
+    </form>
+</body>
+</html>
